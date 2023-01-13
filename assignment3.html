@@ -1,0 +1,123 @@
+<html>
+<body>
+
+
+<div>
+ <div>
+    <label for="uid">User Id:</label>
+    <input id="uid" type="text">
+ </div>
+       <div>
+        <label for="fname">First Name:</label>
+        <input id="fname" type="text">
+
+       </div>
+
+       <div>
+        <label for="lname">Last Name:</label>
+        <input id="lname" type="text">
+       </div>
+<div>
+<label for="birthday">Birthday</label>
+<input id="birthday" type="date">
+</div>
+
+
+<button id="accept" type="button">Accept</button>
+<button id="reset" style="margin-left: 10px;">Reset</button>
+
+</div>
+<div id="ageInfo">a</div>
+<script>
+    
+
+const uid=document.getElementById('uid')
+const fname=document.getElementById('fname')
+const lname=document.getElementById('lname')
+const birthday=document.getElementById('birthday')
+const btn=document.getElementById('accept')
+const reset = document.getElementById('reset')
+const ageInfo = document.getElementById('ageInfo')
+
+btn.addEventListener('click', function(){
+const uidValue=uid.value;
+const fnameValue=fname.value;
+const lnameValue=lname.value;
+const birthdayValue=birthday.value.replaceAll('-','/');
+
+if(!verifyForm(uidValue, fnameValue, lnameValue, birthdayValue)){
+    return false
+}
+
+dateDiff(fnameValue, lnameValue, birthdayValue);
+})
+
+function verifyForm(uidValue, fnameValue, lnameValue, birthdayValue){
+const patternUpper=/[A-Z]/
+const patternLower=/[a-z]/
+const patternNumber=/[0-9]/
+const result1=patternUpper.test(uidValue);
+const result2=patternLower.test(uidValue);
+const result3=patternNumber.test(uidValue);
+
+if(uidValue.length<8 || uidValue.length>12){
+    ageInfo.innerHTML="Invalid UserID"
+    return false
+}
+
+if(!result1||!result2||!result3){
+    ageInfo.innerHTML="Invalid UserID"
+    return false
+}
+
+if(fnameValue===''|| fnameValue===null){
+    ageInfo.innerHTML="Invalid First Name"
+   
+    return false
+}
+
+if(lnameValue==='' || lnameValue===null){
+    ageInfo.innerHTML="Invalid Last Name"
+    return false
+}
+
+if(birthdayValue==='' || birthdayValue===null){
+    ageInfo.innerHTML="Invalid Birthday"
+
+    return false
+}
+return true
+}
+
+const dateDiff=function(fnameValue, lnameValue, birthdayValue){
+
+const currentDate= new Date(new Date().toLocaleDateString());
+const birth=new Date(birthdayValue);
+const timeDiff = currentDate-birth;
+const numOfDays =Math.trunc(timeDiff/(1000*60*60*24));//5
+
+if(numOfDays<18*365){
+    ageInfo.innerHTML = "You are probably not old enough to take this class!"
+}else{
+    ageInfo.innerHTML = `${fnameValue} ${lnameValue} you have been breathing for ${numOfDays} days!`
+}
+}
+
+
+let str = ""
+for(let i = 1;i<=20;i++){
+    document.write(str.padStart(i,"x")+"<br>")
+}
+
+reset.addEventListener('click',()=>{
+    uid.value = '';
+    fname.value = '';
+    lname.value = '';
+    birthday.value = '';
+    ageInfo.innerHTML = ''
+})
+
+</script>
+</body>
+</html>
+ 

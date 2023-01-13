@@ -1,0 +1,147 @@
+<html>
+
+<head>
+<title>First Page</title>
+
+<style> 
+body{
+    text-align: center;
+}
+#zeyd{
+    justify-content: center;
+    display: flex;
+    width: 400px;
+        height: 300px;
+        border: 10px solid rgb(39, 228, 225);
+        background: rgb(234, 230, 118);
+        margin: auto;
+        padding: 15px 10px;
+}
+.btn{
+    background-color: aquamarine;
+    font-size: 16px;
+}
+table{
+    text-align: center;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16;
+    text-decoration: rgb(9, 221, 9) ;
+}
+
+</style>
+
+</head>
+<body>
+    <h1 style="text-align: center; color: blue;">My First HTML Page</h1>
+    <p>ihi p arasina paragraf yaz</p>
+    <div id="zeyd">
+<div>
+    <img src="https://yorkdevtraining.com/images/york-solutions/cherry_PNG616.png" alt="green apple" width="200"
+    height="300"
+    <figcaption>green apple-1</figcaption>
+    </div>
+
+<div>
+<img src="https://yorkdevtraining.com/images/york-solutions/cherry_PNG616.png" alt="red charry" width="200" height="300"
+<figcaption>red charry-1</figcaption>
+</div>
+</div>
+<br>
+<div>
+<button class="btn"><a target="_blank" href="https://www.ddizi.pro/izle/80136/masterchef-2022-175-bolum-izle-8-ocak.htm">masterchef</a></button>
+<button class="btn"><a target="_blank" href="https://www.youtube.com/watch?v=5J-w9AHKHsc">kral radyo</a></button>
+<button class="btn"><a target="_blank" href="https://edabit.com/challenges">edabit coz</a></button>
+
+</div>
+<br>
+<table>
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Born City</th>
+</tr>
+
+<tr>
+    <td>Amina</td>
+    <td>Yesil</td>
+    <td>Ankara</td>
+</tr>
+</table>
+<br>
+<br>
+<button class="top"   onclick={action()}>start</button>
+<div id="display">
+
+    *<br>**
+</div>
+</body>
+<script>
+const display=document.getElementById('display')
+
+    const action=function(){
+// display.innerHTML=hello()
+display.innerHTML=starMaker('x')
+    }
+
+const hello=function(){
+    return "hello world"
+}
+
+let lessThan=function(a,b){
+    
+if((a+b)<100){
+    return true
+}else if((a+b)>100){
+    return false
+}
+    
+}
+
+let animals=function(c, cw, p){
+    return (c*2)+(cw*4)+(p*4)
+    
+}
+
+let nameString=function(str){
+    return str+"Edabit"
+}
+let and=function(a,b){
+    return a&&b
+}
+
+let points=function(a,b){
+    return a*2+b*3
+}
+
+let boolToString=function(a){
+if(a){
+    return "true"
+}  else if(!a){
+    return "false"
+}
+
+
+
+}
+let calculator=function(x){
+    return 
+}
+
+let starMaker=function(a){
+
+let str=""
+
+for(let i=1; i<20;i++){
+str=str + str.padStart(i,a) + '<br>'
+}
+
+return str
+}
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,109 @@
+<html>
+<body>
+    <div>
+    <div>
+        <label for="uid">User ID</label>
+        <input id="uid" type="text">          
+        <div>
+
+
+        </div>
+        <label for="fname">First Name</label>
+        <input id="fanme" type="text">
+        <div>
+
+
+        </div>
+        <label for="lname">Last Name</label>
+        <input id="lname" type="text">
+        <div>
+
+        </div>
+        <label for="birthday">Birthday</label>
+        <input id="birthday" type="date">
+        </div>
+    </div>
+<button id="accept" type="button">start</button>
+<button id="reset" type="button" >finish</button>
+
+<div id="ageInfo">---</div>
+
+
+
+
+<script>
+
+let str=""
+for(let i=1; i<=20; i++){
+    document.write(str.padStart(i,"x")+"<br>")
+}
+
+const uid=document.getElementById('uid')
+const fname=document.getElementById('fname')
+const lname=document.getElementById('lname')
+const birthday=document.getElementById('birthday')
+const btn=document.getElementById('accept')
+const reset=document.getElementById('reset')
+const uageInfo=document.getElementById('ageInfo')
+
+btn.addEventListener('click',function(){
+    const uidValue=uid.value;
+    const fnameValue=fname.value;
+    const lnameValue=lname.value;
+    const birthdayValue=birthday.value.replaceAll('-','/');
+
+    if(!verifyForm(uidValue,fnameValue,lnameValue,birthdayValue)){
+        return false
+    }
+dateDiff(fnameValue,lnameValue,birthdayValue);
+})
+function verifyForm(uidValue,fnameValue,lnameValue,birthdayValue){
+const patternUpper=/[A-Z]/
+const patternLower=/[a-z]/
+const patternNumber=/[0-9]/
+const result1=patternUpper.test(uidValue);
+const result2=patternUpper.test(uidValue);
+const result3=patternUpper.test(uidValue);
+if(uidValue.length<8 || uidValue.length>12){
+    ageInfo.innerHTML="yanlis cevap"
+    return false
+}
+if(!reulst1 || !result2 || !result3){
+    ageInfo.innerHTML="yanlis cevap"
+    return false
+}
+if(fnameValue==='' || fnameValue===null){
+    ageInfo.innerHTML="yanlis cevap"
+    return false
+}
+if(lnameValue==='' || lnameValue===null){
+    ageInfo.innerHTML="yanlis cevap"
+    return false
+}
+}
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

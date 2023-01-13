@@ -1,0 +1,170 @@
+<html>
+<head>
+<title>absurb</title>
+<style> 
+    #koko{
+    
+    text-align: center; 
+    color: rgb(221, 51, 119);
+    }
+    
+    .coco{
+    width: 200px; 
+    height: 300px;
+    
+    }
+      #ramo{
+    
+    display:flex;
+    justify-content: center;
+    
+      }
+    #copo{
+        margin-left: auto;
+      margin-right: auto;
+      width: 500px;
+        text-align: left;
+        color: blue;
+    }
+    
+    
+    </style>
+</head>
+<body id="koko">
+    
+<h1>My First HTML Page</h1>
+<p style="color: black;font-size: 50px">30 kelime yaz  </p>
+<div id="ramo">  
+<div> 
+<img class="coco"     src="pictures\stay buff.png" alt="">
+<figcaption>figure 1: komik resim</figcaption>
+</div>
+
+
+<div>  
+<img class="coco" src="https://images.pexels.com/photos/1556706/pexels-photo-1556706.jpeg?cs=srgb&dl=pexels-daniel-reche-1556706.jpg&fm=jpg" alt="">
+<figcaption>figure 2: baby picture</figcaption>
+<br>
+
+
+</div>
+</div>
+<div>
+<button><a target="_blank"   href="https://www.w3schools.com/css/css_align.asp">button 1</a></button>
+<button><a  target="_blank"  href="https://www.w3schools.com/css/css_align.asp">button 2</a></button>
+<button><a target="_blank"    href="https://www.w3schools.com/css/css_align.asp">button 3</a></button>
+<button><a target="_blank"    href="https://www.w3schools.com/css/css_align.asp">button 4</a></button>
+</div>
+<br>
+<br>
+
+
+
+    <table id="copo">
+<tr>
+    <th>First Name</th>
+    <th>LastName</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Birth Month</th>
+</tr>
+<tr>
+<td>Amina</td>
+<td>YESIL</td>
+<td>Ankara</td>
+<td>New York</td>
+<td>March</td>
+</tr>
+<tr>
+<td>Ramazan</td>
+<td>YESIL</td>
+<td>Kutahya</td>
+<td>Minnesota</td>
+<td>June</td>
+</tr>
+
+
+</table>
+
+<pre  id="star"> *
+
+</pre>
+
+
+
+</body>
+
+<script>
+    let star=document.querySelector("#star")
+    star.innerHTML="zul"
+    console.log(star.innerHTML)
+
+
+
+    
+let name="zuley"
+let lastName="yucel"  //string
+let age=35 // int
+let salary=50000.15// float
+let bDay=new Date("1988/03/03")
+
+name="ramazan"
+console.log(name+" "+lastName+" "+age+" "+salary)
+console.log(bDay.getMonth())
+console.log(name.toUpperCase().length)
+console.log(lastName.toLowerCase())
+
+let stars='';
+
+for(let i=1; i<30; i++){
+
+stars+="".padStart(i,"*")+"\n"
+
+}
+
+star.innerHTML=stars
+
+
+for(let i=10; i>0; i--){
+    console.log(i)
+}
+
+
+const f1=function(name){
+console.log(name)
+return 1
+}
+
+let x=12
+console.log(x+f1("ayse"))
+
+console.log(new Date().getMonth())
+
+console.log(5+6+7)
+
+
+
+const areaOfTriangle=function(a,b,c){
+
+return a+b+c
+}
+
+console.log(areaOfTriangle(12,13,14))
+
+const diff=function(x){
+
+    if(x-13>13){
+        return (x-13)*2
+    }else{
+        return x-13
+    }
+
+}
+
+console.log(diff(25))
+
+
+
+</script>
+
+</html>
